@@ -1,0 +1,58 @@
+body{
+    background: url(question-mark-2492009.jpg)no-repeat center center/cover;
+    height: 100vh;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+.accordion{
+    width: 65%;
+  color: #fff;
+    background-color:rgba(0,0,0,0.5);
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    
+
+}
+.accordion-title{
+  
+    margin-bottom: 30px;
+    text-align: center;
+}
+.accordion .content-container .question{
+    font-size: 22px;
+    padding: 18px 6px;
+ cursor: pointer;
+    border-bottom: 1px solid #ddd;
+   position: relative;
+ 
+}
+.accordion .content-container .question::after{
+    content: '+';
+    position: absolute;
+    right: 1px;
+
+
+}
+.accordion .content-container .answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.8s ease, opacity 0.8s ease;
+}
+
+.accordion .content-container.active .answer {
+  max-height: 500px; /* large enough to fit any content */
+  opacity: 1;
+}
+.accordion .content-container.active .question {
+    font-size: 19px;
+    transition: 0.8s;
+}
+.accordion .content-container.active .question::after {
+    content: '-';
+    font-size: 30px;
+    transition: 0.8s;
+}
